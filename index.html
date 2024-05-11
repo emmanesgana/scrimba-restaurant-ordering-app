@@ -1,10 +1,45 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" href="./src/css/index.css">
+        <title>Restaurant Ordering App</title>
     </head>
     <body>
-        
+        <header class="header-section">
+            <div class="header-text">
+                <h1>Jimmy's Diner</h1>
+                <p>The best burgers and pizzas in town</p>
+            </div>
+        </header>
+        <div class="container">
+            <div id="menu-section"></div>
+            <div id="cart-section" class="cart-section"></div>
+        </div>
+
+        <!-- PAYMENT FORM -->
+        <div id="modal" class="modal">
+            <div id="modal-close" class="modal-close">
+                <button id="modal-close-button" class="modal-close-button">X</button>
+            </div>
+            <form class="modal-form">
+                <h3>Enter card details</h3>
+                <input type="text" id="modal-name" placeholder="Enter your name" required />
+                <input
+                type="number"
+                id="modal-card-number"
+                placeholder="Enter card number"
+                required
+                />
+                <input type="number" id="modal-card-cvv" placeholder="Enter CVV" required />
+                <input type="submit" id="pay-btn" class="modal-pay-button" value="Pay" required />
+            </form>
+        </div>
 	    <script src="./src/js/index.js" type="module"></script>
     </body>
 </html>
