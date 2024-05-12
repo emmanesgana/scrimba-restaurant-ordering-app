@@ -69,6 +69,11 @@ header {
     padding: 15px 35px;
 }
 
+.cart-item-info {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* Typography */
 .header-text {
     position:relative; 
@@ -104,6 +109,10 @@ header p{
     font-Weight: 400;
 }
 
+.cart-title {
+    text-align: center;
+}
+
 /* Buttons */
 
 .add-button{
@@ -124,6 +133,12 @@ header p{
     /* border: 1px solid lightgreen;
     color: lightgreen; */
     background-color: lightgreen;
+}
+
+.cart-remove-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .modal-close-button {

@@ -122,8 +122,8 @@ function renderCart() {
             <div class="cart-list" id="cart-list">  
                 <div class="cart-item-info">
                     <h3>${item.name}</h3>
-                    <h4 id="cart-item-qty">x${item.quantity}</h4>
-                    <button id="remove-item-btn" data-remove="${item.id}">Remove</button>
+                    <button id="remove-item-btn" class="cart-remove-btn" data-remove="${item.id}">Remove</button>
+                    <p id="cart-item-qty">x${item.quantity}</p>
                 </div>
                 <div class="item-price">
                     <h4>$ ${item.price * item.quantity}</h4>
@@ -137,12 +137,11 @@ function renderCart() {
     cartArray.forEach(() => {
 
         cartSectionHtml = `
-            <div id="items-ordered">
+            <div id="order-section">
                 <div>
-                    <h3 id="order-title">Your order</h3>
+                    <h3 class="cart-title">Your order</h3>
                 </div>
                 <div id="order-list">${getCheckoutHtml}</div>
-                <div class="order-separator"></div>
                 <div class="total-price">
                     <div><p>Total: </p></div>
                     <div><p id="total-price">$ ${totalPrice}</p></div>
