@@ -121,12 +121,10 @@ function renderCart() {
         getCheckoutHtml += `
             <div class="cart-list" id="cart-list">  
                 <div class="cart-item-info">
-                    <h3>${item.name}</h3>
-                    <button id="remove-item-btn" class="cart-remove-btn" data-remove="${item.id}">Remove</button>
-                    <p id="cart-item-qty">x${item.quantity}</p>
-                </div>
-                <div class="item-price">
-                    <h4>$ ${item.price * item.quantity}</h4>
+                    <h3 class="cart-item-name">${item.name}</h3>
+                    <p id="cart-item-qty" class="cart-item-qty">x ${item.quantity}</p>
+                    <button id="remove-item-btn" class="remove-item-btn" data-remove="${item.id}">remove</button>
+                    <h4 class="item-price">$ ${item.price * item.quantity}</h4>
                 </div>
             </div>
         `
@@ -137,16 +135,18 @@ function renderCart() {
     cartArray.forEach(() => {
 
         cartSectionHtml = `
-            <div id="order-section">
+            <div id="order-section" class="order-section">
                 <div>
                     <h3 class="cart-title">Your order</h3>
                 </div>
-                <div id="order-list">${getCheckoutHtml}</div>
+                <div id="order-list" class="order-list">${getCheckoutHtml}</div>
                 <div class="total-price">
-                    <div><p>Total: </p></div>
-                    <div><p id="total-price">$ ${totalPrice}</p></div>
+                    <div class="order-total">
+                        <p>Total Price: </p>
+                        <p id="total-price">$ ${totalPrice}</p>
+                    </div>
                 </div>
-                <button id="complete-order-btn">Complete order</button>
+                <button id="complete-order-btn" class="complete-order-btn">Complete order</button>
             </div>
         `
     })

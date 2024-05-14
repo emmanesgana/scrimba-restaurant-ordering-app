@@ -1,23 +1,28 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Smythe&display=swap');
+
 /* Main styles */
 html, body {
     margin: 0 auto;
     padding: 0;
     font-family: "Smythe", system-ui;
+    min-width: 530px;
     max-width: 600px;
 } 
 
 .container {
-    display: flex;
-    flex-direction: column;
+    overflow: hidden;
     /* background-color: cadetblue; */
 }
 
 header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
     background-image: url('/src//img/header-bg.png');
-    background-repeat: no-repeat;
-    width: 600px;
     height: 167px;
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover auto;
 }
 
 .menu-item{
@@ -71,7 +76,20 @@ header {
 
 .cart-item-info {
     display: flex;
+    align-items: center;
+}
+
+.order-total {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+    border-top: 2px solid #393333;
+    font-size: 28px;
+}
+
+.cart-section {
+    margin: 35px 0 35px 0;
+    padding: 0 25px 0 25px;
 }
 
 /* Typography */
@@ -107,10 +125,26 @@ header p{
 .item-price {
     font-size: 20px;
     font-Weight: 400;
+    margin-left: auto;
 }
 
 .cart-title {
     text-align: center;
+    font-size: 28px;
+}
+
+.cart-item-name {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.cart-item-qty {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.order-section h3, h4{
+    margin: 0;
 }
 
 /* Buttons */
@@ -132,13 +166,20 @@ header p{
 .add-button:hover { 
     /* border: 1px solid lightgreen;
     color: lightgreen; */
-    background-color: lightgreen;
+    background-color: #16DB99;
 }
 
-.cart-remove-btn {
+.remove-item-btn {
     background: none;
     border: none;
     cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #bbbbbb;
+    font-size: 12px;
+}
+
+.remove-item-btn:hover {
+    color: #ff2727;
 }
 
 .modal-close-button {
@@ -160,11 +201,16 @@ header p{
     background-color: crimson;
 }
 
-.modal-pay-button {
+.modal-pay-button, .complete-order-btn {
     color: #ffffff;
     font-weight: 800;
     background-color: #16DB99;
     border: none;
+    width: 100%;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 15px;
+    cursor: pointer;
 }
 
 /* Input styles */
