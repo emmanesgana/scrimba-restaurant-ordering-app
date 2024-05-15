@@ -29,15 +29,13 @@ document.addEventListener('click', (e) => {
         modalEl.style.display = 'none'
     }
     // else if (e.target.id === 'modal-pay-btn') {
-    //     e.preventDefault()
-    //     renderThankYouHtml()
+
     // }
 })
 
 modalFormEl.addEventListener('submit', function(e){
     e.preventDefault()
     renderThankYouHtml()
-
 })
 
 // create a function to display the menu items
@@ -181,12 +179,14 @@ function renderCart() {
 
 //create a function to render order complete section
 function renderThankYouHtml() {
+    
     // create a const for createElement
     const orderCompleteEl = document.createElement('div')
     
     // get element of current order
     const orderSectionEl = document.getElementById('order-section')
 
+    disableAddBtn()
     //hide modal and order section
     modalEl.style.display = 'none'
     orderSectionEl.style.display = 'none'
@@ -195,8 +195,20 @@ function renderThankYouHtml() {
     orderCompleteEl.classList.add('order-complete')
     orderCompleteEl.textContent = `Thanks, ${modalName.value}! Your order is on its way!`
     cartSectionEl.appendChild(orderCompleteEl)
-    cartArray.quantity = 0
-    totalPrice = 0
+    
+    //cartArray = []
+    
+    // cartArray.quantity
+    //totalPrice = 0
+}
+
+function disableAddBtn() {
+    const addBtnEl = document.querySelectorAll('.add-btn');
+
+    for (let i=0; i < addBtnEl.length; i++) {
+        addBtnEl[i].setAttribute('disabled','disabled')
+        addBtnEl[i].classList.add('add-btn-disabled')
+    }  
 }
 
 function renderCartHtml(){
