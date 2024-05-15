@@ -195,8 +195,9 @@ function renderThankYouHtml() {
     orderCompleteEl.classList.add('order-complete')
     orderCompleteEl.textContent = `Thanks, ${modalName.value}! Your order is on its way!`
     cartSectionEl.appendChild(orderCompleteEl)
-    cartArray = []
+    cartArray.length = 0
     totalPrice = 0
+    alert(cartArray)
        
 }
 
