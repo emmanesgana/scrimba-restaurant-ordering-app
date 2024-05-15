@@ -173,8 +173,7 @@ header p{
     width: 50px;
     font-family: "Inter", sans-serif;
     font-size: 32px;
-    border-radius: 50px;
-    text-align: center;
+    border-radius: 100px;
     cursor: pointer;
     margin-left: auto;
 }
