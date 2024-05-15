@@ -70,7 +70,7 @@ header {
 
 .modal {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    display: hidden;
+    display: none;
     position: fixed;
     background-color: #ffffff;
     top: 0;
