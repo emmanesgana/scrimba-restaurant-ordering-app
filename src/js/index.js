@@ -17,7 +17,7 @@ let totalPrice = 0
 document.addEventListener('click', (e) => {
     if (e.target.dataset.add){
         addItem(e.target.dataset.add);
-        //cartSectionEl.scrollIntoView()
+        // cartSectionEl.scrollIntoView()
     } 
     else if (e.target.dataset.remove) {
         removeItem(e.target.dataset.remove);
