@@ -23,11 +23,11 @@
         <!-- PAYMENT FORM -->
         <div id="modal" class="modal">
             <div id="modal-close" class="modal-close">
-                <button id="modal-close-button" class="modal-close-button">X</button>
+                <button id="modal-close-btn" class="modal-close-btn">X</button>
             </div>
-            <form class="modal-form">
+            <form id="modal-form" class="modal-form">
                 <h3>Enter card details</h3>
-                <input type="text" id="modal-name" placeholder="Enter your name" required />
+                <input type="text" id="modal-name" placeholder="Enter your name" pattern="[a-zA-Z\s]+" required />
                 <input
                 type="number"
                 id="modal-card-number"
@@ -35,7 +35,7 @@
                 required
                 />
                 <input type="number" id="modal-card-cvv" placeholder="Enter CVV" required />
-                <input type="submit" id="pay-btn" class="modal-pay-button" value="Pay" required />
+                <input type="submit" id="modal-pay-btn" class="modal-pay-btn" value="Pay" required />
             </form>
         </div>
 	    <script src="./src/js/index.js" type="module"></script>

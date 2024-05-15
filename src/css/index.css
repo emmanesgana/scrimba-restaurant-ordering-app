@@ -46,6 +46,28 @@ header {
     display: none;
 }
 
+.cart-item-info {
+    display: flex;
+    align-items: center;
+}
+
+.order-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid #393333;
+    font-size: 28px;
+}
+
+.order-list {
+    margin-top: 15px;
+}
+
+.cart-section {
+    margin: 35px 35px 35px 35px;
+    /* padding: 0 25px 0 25px; */
+}
+
 .modal {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: hidden;
@@ -74,22 +96,16 @@ header {
     padding: 15px 35px;
 }
 
-.cart-item-info {
+.order-complete {
     display: flex;
+    justify-content: center;
     align-items: center;
-}
-
-.order-total {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 2px solid #393333;
-    font-size: 28px;
-}
-
-.cart-section {
-    margin: 35px 0 35px 0;
-    padding: 0 25px 0 25px;
+    border: 2px solid aliceblue;
+    color: #065F46;
+    background-color: #ECFDF5;
+    font-size: 32px;
+    font-weight: 400;
+    height: 120px;
 }
 
 /* Typography */
@@ -149,7 +165,7 @@ header p{
 
 /* Buttons */
 
-.add-button{
+.add-btn{
     background-color: transparent;
     border: 1px solid #DEDEDE;
     color: #3c3c3c;
@@ -163,10 +179,11 @@ header p{
     margin-left: auto;
 }
 
-.add-button:hover { 
+.add-btn:hover { 
     /* border: 1px solid lightgreen;
     color: lightgreen; */
     background-color: #16DB99;
+    transition: 0.3s ease-out;
 }
 
 .remove-item-btn {
@@ -179,10 +196,12 @@ header p{
 }
 
 .remove-item-btn:hover {
-    color: #ff2727;
+    color: #FF605C;
+    transition: 0.3s ease-out;
+    font-weight: 800;
 }
 
-.modal-close-button {
+.modal-close-btn {
     background-color: transparent;
     border: 1px solid #DEDEDE;
     color: #3c3c3c;
@@ -195,18 +214,19 @@ header p{
     cursor: pointer;
 }
 
-.modal-close-button:hover { 
+.modal-close-btn:hover { 
     /* border: 1px solid lightgreen;*/
     color: white; 
-    background-color: crimson;
+    background-color: #FF605C;
 }
 
-.modal-pay-button, .complete-order-btn {
+.modal-pay-btn, .complete-order-btn {
     color: #ffffff;
     font-weight: 800;
     background-color: #16DB99;
     border: none;
     width: 100%;
+    margin-top: 15px;
     font-size: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 15px;
@@ -216,7 +236,7 @@ header p{
 /* Input styles */
 
 .modal-form input {
-    margin: 5px;
+    margin-bottom: 15px;
     padding: 15px;
     /* color: #757575; */
 }

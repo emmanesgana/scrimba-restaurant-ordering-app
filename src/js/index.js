@@ -1,21 +1,43 @@
 // import function from data.js using default export
 import menuArray from "/src/js/data.js"
 
+// get element id of html setions and modal
 const menuSectionEl = document.getElementById('menu-section')
 const cartSectionEl = document.getElementById('cart-section')
-const modalSectionEl = document.getElementById('modal')
+const modalEl = document.getElementById('modal')
+const modalFormEl = document.getElementById('modal-form')
+const modalName = document.getElementById('modal-name')
+const modalCardNumber = document.getElementById('modal-card-number')
+const modalCardCvv = document.getElementById('modal-card-cvv')
 
-const cartArray = []
+let cartArray = []
 let totalPrice = 0
 
 // create an eventListener to check the id of the item to be added to checkout
-document.addEventListener('click', function(e){
+document.addEventListener('click', (e) => {
     if (e.target.dataset.add){
         addItem(e.target.dataset.add);
-    }
+        //cartSectionEl.scrollIntoView()
+    } 
     else if (e.target.dataset.remove) {
         removeItem(e.target.dataset.remove);
     }
+    else if (e.target.id === 'complete-order-btn') {
+        modalEl.style.display = 'block'
+    }
+    else if (e.target.id === 'modal-close-btn') {
+        modalEl.style.display = 'none'
+    }
+    // else if (e.target.id === 'modal-pay-btn') {
+    //     e.preventDefault()
+    //     renderThankYouHtml()
+    // }
+})
+
+modalFormEl.addEventListener('submit', function(e){
+    e.preventDefault()
+    renderThankYouHtml()
+
 })
 
 // create a function to display the menu items
@@ -23,7 +45,10 @@ function renderMenuHtml(menu){
     
     //hide modal and cart section on load
     cartSectionEl.style.display = 'none'
-    modalSectionEl.style.display = 'none'
+    modalEl.style.display = 'none'
+    modalName.value = ''
+    modalCardNumber.value = ''
+    modalCardCvv.value = ''
 
     // use .map to display each object array
     return menu.map(menuItem => {
@@ -45,7 +70,7 @@ function renderMenuHtml(menu){
                     <div class="item-ingredients">${ingredients.join(', ')}</div>
                     <div class="item-price">$ ${price}</div>
                 </div>
-                <button data-add="${id}" class="add-button">+</button>
+                <button data-add="${id}" id="add-btn" class="add-btn">+</button>
             </div>
         `
     }).join('')
@@ -145,13 +170,34 @@ function renderCart() {
                         <p>Total Price: </p>
                         <p id="total-price">$ ${totalPrice}</p>
                     </div>
+                    <button id="complete-order-btn" class="complete-order-btn">Complete order</button>
                 </div>
-                <button id="complete-order-btn" class="complete-order-btn">Complete order</button>
             </div>
         `
     })
   
     return cartSectionHtml;
+}
+
+//create a function to render order complete section
+function renderThankYouHtml() {
+    // create a const for createElement
+    const orderCompleteEl = document.createElement('div')
+    
+    // get element of current order
+    const orderSectionEl = document.getElementById('order-section')
+
+    //hide modal and order section
+    modalEl.style.display = 'none'
+    orderSectionEl.style.display = 'none'
+
+    //avoiding innerHtml rendering for input button
+    orderCompleteEl.classList.add('order-complete')
+    orderCompleteEl.textContent = `Thanks, ${modalName.value}! Your order is on its way!`
+    cartSectionEl.appendChild(orderCompleteEl)
+    cartArray = []
+    totalPrice = 0
+       
 }
 
 function renderCartHtml(){
