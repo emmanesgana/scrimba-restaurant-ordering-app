@@ -6,7 +6,7 @@ html, body {
     margin: 0 auto;
     padding: 0;
     font-family: "Smythe", system-ui;
-    min-width: 530px;
+    /* min-width: 530px; */
     max-width: 600px;
 } 
 
